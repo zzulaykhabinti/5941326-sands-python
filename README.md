@@ -1,115 +1,61 @@
-\#Processing Toolkit
-
-
+# Processing Toolkit
 
 This is a Python-based utility for generating and modifying the basic time-domain signals.  
 
-this is built as part of my coursework for the subject AESB2122-24 (Signals \& Systems), Applied Earth Sciences at TU Delft.
-
-
+This is built as part of my coursework for the subject AESB2122-24 (Signals & Systems), Applied Earth Sciences at TU Delft.
 
 ---
 
-
-
-\## Project Description
-
-
+## Project Description
 
 This repository provides a set of tools that can be used for working with digital signals that use NumPy, Matplotlib and Math.  
 
 It allows you to:
 
-
-
-\- Construct periodic signals like sine and triangle waves
-
-\- Apply time-based transformations such as shifting and scaling
-
-\- Generate visual comparisons between original and modified signals
-
-\- Run test cases to verify the correctness of signal logic
-
-
+- Construct periodic signals like sine and triangle waves  
+- Apply time-based transformations such as shifting and scaling  
+- Generate visual comparisons between original and modified signals  
+- Run test cases to verify the correctness of signal logic  
 
 ---
 
+## Features
 
-
-\## Features
-
-
-
-\### Signal Generation
-
-
+### Signal Generation
 
 Implemented in `signals.py`, are the following functions used to generate common waveforms:
 
+- `sine_signal(freq, t0, t1, amp, fs, phase=0.0)`  
+  Produces a sine wave using the specified frequency, time interval, amplitude, and sampling rate.
 
-
-\- `sine\_signal(freq, t0, t1, amp, fs, phase=0.0)`  
-
-&nbsp; Produces a sine wave using the specified frequency, time interval, amplitude, and sampling rate.
-
-
-
-\- `triangle\_signal(freq, t0, t1, amp, fs)`  
-
-&nbsp; Creates a triangle waveform over a defined timebase.
-
-
+- `triangle_signal(freq, t0, t1, amp, fs)`  
+  Creates a triangle waveform over a defined timebase.
 
 Both functions return a NumPy array for time and the corresponding signal values.
 
-
-
-\### Time-Domain Operations
-
-
+### Time-Domain Operations
 
 The project supports three types of time-domain manipulations:
 
+- `time_shift(t, y, tau)`  
+  Offsets a signal in time by `tau` seconds without altering its values.
 
+- `time_scale(t, y, a, fill=0.0)`  
+  Resamples the signal with a time scaling factor `a`. The `fill` argument defines values outside the interpolation range.
 
-\- `time\_shift(t, y, tau)`  
-
-&nbsp; Offsets a signal in time by `tau` seconds without altering its values.
-
-
-
-\- `time\_scale(t, y, a, fill=0.0)`  
-
-&nbsp; Resamples the signal with a time scaling factor `a`. The `fill` argument defines values outside the interpolation range.
-
-
-
-\- `time\_shift\_and\_scale(t, y, tau, a, fill=0.0)`  
-
-&nbsp; Applies both time shift and scaling using a combined affine transformation.
-
-
+- `time_shift_and_scale(t, y, tau, a, fill=0.0)`  
+  Applies both time shift and scaling using a combined affine transformation.
 
 ---
 
+## Running the Code
 
-
-\## Running the Code
-
-
-
-The main script is `run.py`. this generates the signals, applies all transformations to it, and creates the plots.
-
-
+The main script is `run.py`. This generates the signals, applies all transformations to them, and creates the plots.
 
 To execute:
 
-
-
 ```bash
-
 python run.py
-
 
 
 \## How to Test
@@ -168,7 +114,7 @@ pip install numpy matplotlib math
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
