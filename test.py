@@ -10,10 +10,6 @@ from signals import (
     time_shift_and_scale,
 )
 
-
-# Test utilities and constants
-
-
 # Tolerance levels for the numerical comparisons
 RTOL = 1e-7
 ATOL = 1e-12
@@ -23,12 +19,8 @@ def almost_equal(a, b, rtol=RTOL, atol=ATOL):
     Wrapper around np.allclose with stricter default tolerances.
     """
     return np.allclose(a, b, rtol=rtol, atol=atol)
-
-
-
+    
 # Timebase Tests
-
-
 def test_make_timebase_basic():
     """
     Ensure _make_timebase creates the correct number of samples and spacing.
@@ -55,11 +47,7 @@ def test_make_timebase_errors():
         assert False, "Expected ValueError for t_end <= t_start"
     except ValueError:
         pass
-
-
-
 # Signal Generator Tests
-
 def test_sine_signal_length_and_range():
     """
     Check sine signal length and amplitude bounds.
@@ -87,8 +75,6 @@ def test_triangle_signal_length_and_range():
 
 
 # Time Transformation Tests
-
-
 def test_time_shift_pure_shift():
     """
     Validate the time shift: time values should be shifted by tau, the data remains unchanged.
@@ -118,7 +104,6 @@ def test_time_scale_basic():
     assert almost_equal(ys[in_bounds], 2.0 * t[in_bounds])
     assert np.allclose(ys[~in_bounds], -1.0)  # Should match fill
 
-
 def test_time_shift_and_scale_equivalence():
     """
     time_shift_and_scale should match manual interpolation of x(a * t - tau).
@@ -129,19 +114,15 @@ def test_time_shift_and_scale_equivalence():
 
     tc, yc = time_shift_and_scale(t, y, tau=tau, a=a, fill=0.0)
 
-    # Expected result using direct interpolation
+    # Expected result for this method using direct interpolation
     query = a * t - tau
     y_expected = np.interp(query, t, y, left=0.0, right=0.0)
 
     assert almost_equal(tc, t)
     assert almost_equal(yc, y_expected)
-
-
-
+    
 # Script Mode
-
 if __name__ == "__main__":
-    # Execute all tests directly
     test_make_timebase_basic()
     test_make_timebase_errors()
     test_sine_signal_length_and_range()
