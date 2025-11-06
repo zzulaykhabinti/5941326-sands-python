@@ -54,7 +54,6 @@ The main script is `run.py`. This generates the signals, applies all transformat
 
 To execute:
 
-```bash
 python run.py
 
 
