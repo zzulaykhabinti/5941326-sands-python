@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Python Coding Project - Signals & Systems & Python AESB2122-24"
+version = "0.1.0"
+description = "A pythong project that creates signals, applies transformations and generates them"
+authors = [
+    {name = "Zulaykha Binti Mohd Azman", email = "zzulaykhabinti@tudelft.nl"}
+]
+dependencies = ["numpy", "matplotlib"]
