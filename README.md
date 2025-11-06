@@ -58,6 +58,8 @@ To execute:
 python run.py
 
 
+
+
 ## How to Test
 
 
@@ -67,10 +69,6 @@ This project includes a script found in `test.py`, which can be used to verify t
 
 
 To run the tests use:
-
-
-
-```bash
 
 python test.py
 
@@ -105,8 +103,6 @@ This project requires the following Python packages:
 If they are not already installed, you can install them using:
 
 
-
-```bash
 
 pip install numpy matplotlib math
 
