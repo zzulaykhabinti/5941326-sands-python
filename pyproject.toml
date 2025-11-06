@@ -9,4 +9,4 @@ description = "A pythong project that creates signals, applies transformations a
 authors = [
     {name = "Zulaykha Binti Mohd Azman", email = "zzulaykhabinti@tudelft.nl"}
 ]
-dependencies = ["numpy", "matplotlib"]
+dependencies = ["numpy", "matplotlib.pyplot", "math"]
